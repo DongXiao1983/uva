@@ -1,9 +1,9 @@
 #109 SCUD 
-This is a cyfra problem. 
-Step 1: cacluate each kindom's areas
-Step 2: Judge the bomb is in the kindom
-Step 3: Then add the kindom's areas
-Step 4: The bomb just only one change to attach a kindom.
+This is a cyfra problem.   
+Step 1: cacluate each kindom's areas  
+Step 2: Judge the bomb is in the kindom  
+Step 3: Then add the kindom's areas  
+Step 4: The bomb just only one change to attach a kindom.  
 
 ## Sample Code
 
