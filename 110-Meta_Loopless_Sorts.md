@@ -1,3 +1,9 @@
+####这是个递归全排列的输出问题，  
+从集合里只有一个元素开始，每次添加一个元素，插入到上个集合每一个元素的每一个位置。共N！输出  
+1 elements:  a   
+2 elements:  ab    ba  
+3 elements:  abc   acb  cab  bac bca  cba  
+
      1	#include <stdio.h>
      2	#include <iostram>
      3	#include <algrothm>
