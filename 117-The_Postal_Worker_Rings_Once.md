@@ -1,3 +1,5 @@
+if no odd node, just sum all path, if have odd node, it mush be pair. so get there two node's sortest path length
+
      1	#include <iostream>
      2	#include <string>
      3	#include <cstdio>
