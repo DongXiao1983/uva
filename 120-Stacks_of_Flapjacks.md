@@ -1,34 +1,3 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <cstring>
-using namespace std;
-
-#define MAX 1000
-char  input[1000];
-int   pank[31] = { 0};
-int main()
-{
-  while (cin.getline(input, MAX, '\n')){
-    memset(pank,0,31);
-    cout << input <<  endl;
-    int count = 0;
-    int i = 0;
-    for ( i =0 ; input[i] == ' ' ; i++ ) ;
-    for ( i; i < strlen(input) ; i++){
-      if ( input[i] == ' '){
-	count++;
-      }
-      else {	
-	  pank[count] = 10 * pank[count] + (input[i]-'0');
-      }
-    }
-
-    for ( int i = 0 ; i <= count ; i++ )
-       cout << pank[i] << " ";
-  }
-  return 0;
-}
      1	#include <iostream>
      2	#include <string>
      3	#include <algorithm>
@@ -53,54 +22,51 @@ int main()
     22	  for ( i = 0 ; i < n ; i++ ){
     23		pank[i] = tmp[i];
     24	  }
-    25	#if 0
-    26	 for ( int i = 0 ; i < n ; i++ )
-    27	       cout << pank[i] << " ";
-    28	#endif
-    29	}
-    30	
-    31	int flappick(int n)
-    32	{
-    33	  if ( 0 == n )
-    34		return 0;
-    35	  int max = 0;
-    36	  int   i = 0;
-    37	  for ( i = 1 ; i < n ; i++ ) {
-    38		if( pank[i]>pank[max]){
-    39		  max = i;
-    40		}
-    41	  }
-    42	  
-    43	  if ( max+1 != n ){
-    44		cout << total - n +max << " ";
-    45		revert(max,n);
-    46		flappick(n-1);
-    47	  }
-    48	
-    49	}
-    50	
-    51	int main()
-    52	{
-    53	  while (cin.getline(input, MAX, '\n')){
-    54	    memset(pank,0,31);
-    55	    cout << input <<  endl;
-    56	    int count = 0;
-    57	    int i = 0;
-    58	    for ( i =0 ; input[i] == ' ' ; i++ ) ;
-    59	    for ( i; i < strlen(input) ; i++){
-    60	      if ( input[i] == ' '){
-    61		    count++;
+    25	
+    26	}
+    27	
+    28	int flappick(int n)
+    29	{
+    30	  if ( 0 == n )
+    31		return 0;
+    32	  int max = 0;
+    33	  int   i = 0;
+    34	  for ( i = 1 ; i < n ; i++ ) {
+    35		if( pank[i]>pank[max]){
+    36		  max = i;
+    37		}
+    38	  }
+    39	  
+    40	  if ( max+1 != n ){
+    41		cout << total - n +max << " ";
+    42		revert(max,n);
+    43		flappick(n-1);
+    44	  }
+    45	
+    46	}
+    47	
+    48	int main()
+    49	{
+    50	  while (cin.getline(input, MAX, '\n')){
+    51	    memset(pank,0,31);
+    52	    cout << input <<  endl;
+    53	    int count = 0;
+    54	    int i = 0;
+    55	    for ( i =0 ; input[i] == ' ' ; i++ ) ;
+    56	    for ( i; i < strlen(input) ; i++){
+    57	      if ( input[i] == ' '){
+    58		    count++;
+    59	      }
+    60	      else {	
+    61		    pank[count] = 10 * pank[count] + (input[i]-'0');
     62	      }
-    63	      else {	
-    64		    pank[count] = 10 * pank[count] + (input[i]-'0');
-    65	      }
-    66	    }
-    67	
-    68	    total = count+2;
-    69		flappick(count+1);
-    70		cout << 0 << endl;
-    71	  }
-    72	 
-    73	  
-    74	  return 0;
-    75	}
+    63	    }
+    64	
+    65	    total = count+2;
+    66		flappick(count+1);
+    67		cout << 0 << endl;
+    68	  }
+    69	 
+    70	  
+    71	  return 0;
+    72	}
