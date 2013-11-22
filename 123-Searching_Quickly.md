@@ -1,20 +1,20 @@
- 1  #include <iostream>
- 2  #include <string>
- 3  #include <cstring>
- 4  #include <algorithm>
- 5  #include <map>
- 6  #include <set>
- 7  
- 8  using namespace std;
- 9  
-10  int main()
-11  {
-12    string line;
-13    set<string> ignore;
-14    set<string>::iterator it;
-15    typedef  multimap<string, string> title_m ;
-16    title_m title ;
-17  
+    1  #include <iostream>   
+    2  #include <string>   
+    3  #include <cstring>
+    4  #include <algorithm>
+    5  #include <map>
+    6  #include <set>
+    7  
+    8  using namespace std;
+    9  
+    10  int main()
+   11  {
+   12    string line;
+   13    set<string> ignore;
+   14    set<string>::iterator it;
+   15    typedef  multimap<string, string> title_m ;
+   16    title_m title ;
+   17  
 18    while(!cin.eof()) {
 19      getline(cin,line);
 20      if ( line == "::")
