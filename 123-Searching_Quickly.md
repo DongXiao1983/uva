@@ -14,14 +14,13 @@
    14    set<string>::iterator it;
    15    typedef  multimap<string, string> title_m ;
    16    title_m title ;
-   17  
-18    while(!cin.eof()) {
-19      getline(cin,line);
-20      if ( line == "::")
-21        break;
-22      transform(line.begin(),line.end(),line.begin(),::tolower);
-23      ignore.insert(line);
-24    }
+   18    while(!cin.eof()) {
+         getline(cin,line);
+      if ( line == "::")
+        break;
+      transform(line.begin(),line.end(),line.begin(),::tolower);
+      ignore.insert(line);    
+      }
 25    while(!cin.eof()){
 26      getline(cin,line);
 27      
