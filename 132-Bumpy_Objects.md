@@ -9,9 +9,16 @@
 	  int y;
 	}point;
 	
+	bool operator==(const point p1, const point p2){
+	  return (p1.x == p2.x && p1.y == p2.y);
+	}
+	
+	bool operator*(const point p1, const point p2){
+	  return (p1.x * p2.x + p1.y * p2.y);
+	}
 	
 	bool operator^(const point p1, const point p2){
-	  return (p1.x * p2.x + p1.y * p2.y);
+	  return (p1.x * p2.y - p1.y * p2.x);
 	}
 	
 	vector<point>  nodes;
@@ -87,7 +94,9 @@
 	
 	int main()
 	{
+	  int mass_x, mass_y;
 	  int start, end;
+	  cin >> mass_x >> mass_y;
 	  while ( cin >> start >> end) { 
 		if ( start == 0 && end == 0 )
 		  break;
@@ -109,9 +118,9 @@
 		int k = ( j + 1 ) % nodes.size();
 	
 	
-		point p1 = (nodes[j].x - nodes[i].x, nodes[j].y - nodes[i].y);
+		point p1 = {nodes[j].x - nodes[i].x, nodes[j].y - nodes[i].y};
 	
-		point p2 = (nodes[k].x - nodes[j].x, nodes[k].y - nodes[j].y);
+		point p2 = {nodes[k].x - nodes[j].x, nodes[k].y - nodes[j].y};
 	
 		if ( ( p1 ^ p2 ) == 0 ) {
 		  nodes.erase(nodes.begin() + j );
@@ -119,4 +128,27 @@
 		}
 	  }
 	  
+	  int Nmin = nodes.size();
+	
+	  for ( int i = 0 ; i < nodes.size(); i++ ){
+		int j = ( i + 1 ) % nodes.size();
+		point v1 = {mass_x - nodes[i].x, mass_y - nodes[i].y};
+		point v2 = {mass_y - nodes[j].x, mass_y - nodes[j].y};
+	
+		point s1 = {nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y };
+		point s2 = {nodes[j].x - nodes[i].x, nodes[j].y - nodes[i].x };
+	
+		if ( ( s1 ^ v1 ) >= 0  && v1 * s1 >= 0 && v2 * s2 >= 0 ){
+		  for ( int k = 0 ; k < nodes.size(); k++ ){
+			s2.x = nodes[k].x - nodes[i].x;
+			s2.y = nodex[k].y - nodes[i].y;
+	
+			if (( s2 ^ s1 ) == 0 )
+			  nMax =  max(k, nMax);
+		  }
+		  Nmin = min(Nmin, nMax);
+		}
+		cout << name << " " << Nmin + 1 << endl;
+	  }
+	  return 0;
 	}
