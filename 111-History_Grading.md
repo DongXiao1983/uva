@@ -1,4 +1,4 @@
-###Problem Link []http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=47
+###[Problem Link ](http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=47)
 It was Longest increase substring problem.
 The DP algorithm is O(n^2)
 There is a better algoritm is O(nlogn), there different is to find out the max value.
