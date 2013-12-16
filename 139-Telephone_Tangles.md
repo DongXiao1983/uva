@@ -48,7 +48,8 @@
 	    for ( int i = 0 ; i < t.length(); r.price = 10 *r.price + (t[i++]-'0'));
 	    
 	    rec.push_back(r);
-	  }
+	  }    
+	  
 	  string aa ;
 	  int    bb ;
 	  while(cin >> aa  ){
