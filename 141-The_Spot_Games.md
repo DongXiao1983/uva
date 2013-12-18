@@ -1,40 +1,81 @@
 	#include <iostream>
-	#include <vector>
+	#include <string>
+	#include <cstring>
+	#include <set>
+	
 	using namespace std;
-	int matrix[50][50];
 	
-	typedef step_t{
-	  int m1[50][50];
-	  int m2[50][50];
-	  int m3[50][50];
-	  int m4[50][50];
-	  int times = 0;
-	}step;
+	int map[50][50];
+	char map_store[4][2500];
+	char c ;
+	int  n ;
+	set<string> matrix; 
+	void save()
+	{
+	  memset(map_store, 0, sizeof(map_store));
+	  int k = 0;
+	  int i = 0;
+	  int j = 0;
+	  for ( i = 0 ; i < n ; i++ )
+		for (  j = 0 ; j < n ; j++ )
+		  map_store[0][k++] = map[i][j] + '0';
+	  k = 0;
+	  for ( i = 0 ; i < n ; i ++ )
+		for ( j = 0 ; j < n ; j++ )
+		  map_store[1][k++] = map[n-i][n-j] + '0';
 	
-	vector<step> s;
+	  k = 0;
+	  for ( i = 0 ; i < n ; i++ )
+		for ( j = 0 ; j < n ; j ++ )
+		  map_store[2][k++] = map[j][n-i] +'0';
+	
+	  k = 0;
+	  for ( i = 0 ; i < n; i++ )
+		for ( j = 0 ; j < n ; j++ )
+		  map_store[3][k++] = map[i][n-j] + '0';
+	}
+	
 	int main()
 	{
-	  int n;
-	  int times = 1;
-	  int x, y;
-	  char spot;
-	  
-	  while(cin >> n){
-	    if ( n == 0) break;
 	
-	    while ( cin >> x >> y >> spot ){
-	      step s ;
-	      if ( spot == '+') matrix[x][y] = 1;
-	      if ( spot == '-') matrix[x][y] = 0;
-	      vector<step>::iterator it;
-	      for ( it = s.begin(); it != s.end(); it++){
-		if ((it->m1 == matrix ) || (it->m2 == matrix) || (it->m3 == matrix) || (it->m4 == matrix)){
-		  cout << "Player " << it->times-1 << " is winer" << endl;
-		  break;
+	  while ( cin >> n){
+		if (n == 0) break;
+		memset(map,0,sizeof(map));
+		matrix.clear();
+		int judge = 0;
+		int step  = 0;
+		int st    = 1;
+		int x     = 0 ;
+		int y     = 0;
+		while(cin >> x >> y >> c && st < 2 * n){
+		  
+		  if (c == '+') map[x][y] = 1;
+		  if (c == '-') map[x][y] = 0;
+		  save();
+		  for ( int i = 0 ; i < 4 ; i++ ){
+			if ( matrix.find(map_store[i]) != matrix.end()){
+			  judge = 1;
+			  break;
+			}
+		  }
+		  for ( int j = 0  ; j < 4 ; j++ ){
+			matrix.insert(map_store[j]);
+		  }
+		  if ( judge ){
+			if (step == 0)
+			  step = st + 1;
+	
+		  }
+		  st++;
 		}
-		s.push_back(s);
-	      }
-	    }
-	
+		if ( judge ){
+		  if ( step %2 )
+			cout << "Player 2 wins on move "<< step << endl;
+		  else
+			cout << "Player 1 wins on move "<< step << endl;
+		}
+		else
+		  cout << "Draw" << endl;
 	  }
+	  return 0;
 	}
