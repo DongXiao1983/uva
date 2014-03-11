@@ -12,3 +12,11 @@ The online judge problems
   搞定hotplug    
   完成cache，验证，ppt，文档    
   完成kprobe in mips & x86    
+  
+  
+#### 评估算法的几个方面
+时间
+内存
+是否支持扩展
+是否面向磁盘结构
+是否能并行  并行的条件：锁分离，copy on write
