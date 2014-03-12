@@ -1,4 +1,4 @@
-/* My Cache Test from OCTEON II */
+/* My Cache Test for OCTEON II */
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory.h>
