@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/ccc2013/svn/xiadong/!svn/ver/34/testdata
+END
+Test_MemAlign.bin
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Test_MemAlign.bin
+END
+test_main.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/test_main.c
+END
+Employee.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Employee.h
+END
+Employee.bin
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Employee.bin
+END
+Test_Marco.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Test_Marco.h
+END
+Test_Marco.bin
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Test_Marco.bin
+END
+Test_MemAlign.h
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/ccc2013/svn/xiadong/!svn/ver/34/testdata/Test_MemAlign.h
+END

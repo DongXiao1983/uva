@@ -1,0 +1,53 @@
+>> Usage:
+Please first use "make" to generate "readlog"
+
+
+>> Help Info:
+
+Log Raw Data Processer 1.0.0, Copyright (C) 2013-2013 Dong Xiao
+  Compiled: Jul  5 2013, 02:23:28
+
+  Options: 
+   -b  <bin file name> 
+       The Raw data file'name. 
+   -i  <directory> 
+       head file's directory 
+   -f  <head file name>
+       head file's name
+   -s  <struct name> 
+   -r  Recurse into directories. 
+   -h  Print this option summary. 
+
+>> Directory:
+uttest:   The UT code & cpputest
+
+testdata: Some test data, pairt with ( Raw Data file  & struct name in *.h)
+	  Until now , it support these types:
+	  
+          1. The basic struct , union, define and emun            ( Employee.bin          Employee   )
+          
+          2. The Memory align about mix-usage in struct & union   ( Test_MemAlign.bin     MemAlign   )
+          
+          3. The simple Expression in #define , 
+               example: 
+                   #define EXP   ((((1+2)*3 -1) >>2 )|3)          ( Test_Marco.bin        Marco )
+          
+          4. The muitl define ,                                   ( Test_MutilMarco.bin   MutilMarco )
+	       example:
+                  #define START   2
+		  #define SIZE    START*5
+		  #define LENGTH  1 << 4
+		  #define WIDE    SIZE+1
+		  #define HIGH    14-4
+		  #define DEEP    10/START
+		  #define EXP     ((((1+START)*3 -1) >>START )|3)
+      
+          5. The Struct array                                    ( Test_StructArray.bin   StructArray )
+
+>> Command line example:
+
+Exp1: ./readlog -i testdata/ -b ./testdata/Employee.bin -s Employee
+Exp2: ./readlog -r -b ./testdata/Employee.bin -s Employee
+
+
+

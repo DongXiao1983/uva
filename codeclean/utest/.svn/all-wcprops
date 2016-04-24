@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/ccc2013/svn/xiadong/!svn/ver/19/utest
+END
+test_entry.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/ccc2013/svn/xiadong/!svn/ver/19/utest/test_entry.cpp
+END
+test_main.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/ccc2013/svn/xiadong/!svn/ver/19/utest/test_main.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/ccc2013/svn/xiadong/!svn/ver/19/utest/Makefile
+END
+test_xstring.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/ccc2013/svn/xiadong/!svn/ver/19/utest/test_xstring.cpp
+END
